@@ -17,6 +17,7 @@ import TimeList from "./components/pages/List/VotersList";
 import CandidateList from "./components/pages/List/CandidateList";
 import CandidateAdd from "../src/components/pages/Candidate/CandidateAdd";
 import VotersList from "./components/pages/List/VotersList";
+import UserNavbar from "./components/utils/UserNavbar/UserNavbar"
 // import AddTurfDetails from "../src/components/pages/TurfDetails/AddTurfDetails";
 // import ViewTurf from "../src/components/pages/TurfDetails/ViewTurf";
 
@@ -76,7 +77,7 @@ function App() {
 
             {/* user routes */}
             <Route path="/user" element={<AuthLayout />}>
-              <Route path="register" element={<Register />} />
+              <Route path="landing" element={<UserNavbar />} />
               <Route path="login" element={<Login />} />
               <Route path="forgot" element={<ForgotPassword />} />
               <Route path="recover" element={<RecoverPassword />} />

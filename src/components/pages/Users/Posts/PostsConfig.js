@@ -6,27 +6,27 @@ const UserTypeConfig =[
         title:'Chairman',
         Icon:SupervisorAccountIcon,
         colorType:"primary",
-        total:'250',
-
+        name:"chonari"
     },
     {
         title:'Editor',
-        Icon:GroupIcon,
+        Icon:SupervisorAccountIcon,
         colorType:"error",
-        total:'200',
+        name:"mfc"
     },
     {
         title:'UUC',
-        Icon:GroupIcon,
+        Icon:SupervisorAccountIcon,
         colorType:"info",
-        total:'120',
+        name:"manu"
     },
     {
-        title:"Association Secretery(CS)",
-        Icon:AccountBalanceIcon,
-        colorType:"warning",
-        total:'12',
+        title:'Association Secretery',
+        Icon:SupervisorAccountIcon,
+        colorType:"error",
+        name:"electric"
     }
+
 ]
 
 export default UserTypeConfig;

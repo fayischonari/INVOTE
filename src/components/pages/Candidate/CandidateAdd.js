@@ -49,6 +49,13 @@ export default function CandidateAdd() {
           </Select>
         </FormControl>
         <TextField
+          sx={{ margin: "10px",width:"100%"}}
+          id="outlined-basic"
+          label="Image"
+          
+          variant="outlined"
+        />
+        <TextField
           sx={{ margin: "10px" }}
           id="outlined-basic"
           label="Enter candidate's Name"

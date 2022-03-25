@@ -18,6 +18,10 @@ import CandidateList from "./components/pages/List/CandidateList";
 import CandidateAdd from "../src/components/pages/Candidate/CandidateAdd";
 import VotersList from "./components/pages/List/VotersList";
 import UserNavbar from "./components/utils/UserNavbar/UserNavbar"
+import EditorPost from "./components/pages/Users/Posts/EditorPost";
+import Uuc from "./components/pages/Users/Posts/Uuc";
+import AssociationSecretrary from "./components/pages/Users/Posts/AssociationSecretrary";
+import ChairmanPost from "./components/pages/Users/Posts/ChairmanPost";
 // import AddTurfDetails from "../src/components/pages/TurfDetails/AddTurfDetails";
 // import ViewTurf from "../src/components/pages/TurfDetails/ViewTurf";
 
@@ -82,8 +86,12 @@ function App() {
               <Route path="forgot" element={<ForgotPassword />} />
               <Route path="recover" element={<RecoverPassword />} />
             </Route>
-
-
+            <Route path="/post">
+            <Route path="chairman" element={<ChairmanPost />} />
+              <Route path="editor" element={<EditorPost />} />
+              <Route path="uuc" element={<Uuc />} />
+              <Route path="as" element={<AssociationSecretrary />} />
+                </Route>
           </Routes>
         </ProfileProvider>
     </ThemeConfig>

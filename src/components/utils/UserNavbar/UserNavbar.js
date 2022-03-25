@@ -12,7 +12,7 @@ import { Outlet } from "react-router-dom";
 import { Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import UsersCard from "../../pages/Home/UsersCard";
-import PostsConfig from "../../pages/Home/PostsConfig";
+import PostsConfig from "../../pages/Users/Posts/PostsConfig";
 
 export default function UserNavbar() {
   return (

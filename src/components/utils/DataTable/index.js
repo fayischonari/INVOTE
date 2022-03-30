@@ -14,6 +14,7 @@ import {
   Typography,
   TableContainer,
   TablePagination,
+  Radio
 } from "@mui/material";
 
 // props type library
@@ -62,13 +63,25 @@ DataTable.propTypes = {
   TABLE_HEAD: PropTypes.array,
   TABLE_DATA: PropTypes.array,
 };
+
+
+
+
 export default function DataTable({ TABLE_HEAD, TABLE_DATA, SEARCH_ID }) {
+  //radio button state
+  const [selectedValue, setSelectedValue] = useState();
+
   const [page, setPage] = useState(0);
   const [order, setOrder] = useState("asc");
   const [selected, setSelected] = useState([]);
   const [orderBy, setOrderBy] = useState("name");
   const [filterName, setFilterName] = useState("");
   const [rowsPerPage, setRowsPerPage] = useState(5);
+
+  //radio button change
+  const handleRadioButtonChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -120,7 +133,7 @@ export default function DataTable({ TABLE_HEAD, TABLE_DATA, SEARCH_ID }) {
           <Stack
             direction="row"
             alignItems="center"
-            sx={{textDecoration:"none",color:"black"}}
+            sx={{ textDecoration: "none", color: "black" }}
             spacing={2}
             component={Link}
             to={`${col.baseUrl}/${value._id}`}
@@ -129,6 +142,23 @@ export default function DataTable({ TABLE_HEAD, TABLE_DATA, SEARCH_ID }) {
             <Typography variant="subtitle2" noWrap>
               {value[col.id]}
             </Typography>
+          </Stack>
+        );
+      case "radio":
+        return (
+          <Stack
+            direction="row"
+            alignItems="center"
+            sx={{ textDecoration: "none", color: "black" }}
+            spacing={2}
+          >
+            <Radio
+              checked={selectedValue === 'voted'}
+              onChange={handleRadioButtonChange}
+              value="voted"
+              name="radio-buttons"
+              inputProps={{ 'aria-label': 'A' }}
+            />
           </Stack>
         );
       case "userStatusChip":
@@ -140,8 +170,8 @@ export default function DataTable({ TABLE_HEAD, TABLE_DATA, SEARCH_ID }) {
               value[col.id] === "created"
                 ? "error"
                 : value[col.id] === "registred"
-                ? "primary"
-                : "success"
+                  ? "primary"
+                  : "success"
             }
           />
         );

@@ -3,6 +3,7 @@
 // material
 import { alpha, styled } from "@mui/material/styles";
 import { Card, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 // utils
 // import { fShortenNumber } from '../../../utils/formatNumber';
 
@@ -37,6 +38,7 @@ export default function UsersCard({type}) {
   }));
   return (
     <RootStyle>
+      <Link to="/post/chairman" style={{ textDecoration: "none" }}>
       <IconWrapperStyle>
         {/* <Icon icon={appleFilled} width={24} height={24} /> */}
         <Icon/>
@@ -45,6 +47,7 @@ export default function UsersCard({type}) {
       <Typography variant="h6">
         {total}
       </Typography>
+      </Link>
     </RootStyle>
   );
 }

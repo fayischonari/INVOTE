@@ -22,6 +22,14 @@ import EditorPost from "./components/pages/Users/Posts/EditorPost";
 import Uuc from "./components/pages/Users/Posts/Uuc";
 import AssociationSecretrary from "./components/pages/Users/Posts/AssociationSecretrary";
 import ChairmanPost from "./components/pages/Users/Posts/ChairmanPost";
+
+//posts for voters
+import VoterAssociationPost from "./components/pages/Voter/post/VoterAssociationPost";
+import VoterChairmanPost from "./components/pages/Voter/post/VoterChairmanPost";
+import VoterEditorPost from "./components/pages/Voter/post/VoterEditorPost";
+import VoterUucPost from "./components/pages/Voter/post/VoterUucPost";
+import VotterAdd from "./components/pages/Voter/VotterAdd";
+
 // import AddTurfDetails from "../src/components/pages/TurfDetails/AddTurfDetails";
 // import ViewTurf from "../src/components/pages/TurfDetails/ViewTurf";
 
@@ -29,27 +37,27 @@ function App() {
   return (
     <ThemeConfig>
       <GlobalStyles />
-        {/* User profile provider */}
-        <ProfileProvider>
-          <Routes>
-            {/* Home routes (Dashboard) */}
-            <Route path="/app" element={<DashboardLayout />}>
-              <Route path="/app" element={<Navigate to="/app/home" />} />
-              <Route path="home" element={<Home />} />
-              
-              <Route path="date" element={<Date />} />
-              <Route path="voterslist" element={<VotersList />} />
-              <Route path="candidateadd" element={<CandidateAdd/>}/>
-              {/* <Route path="candidateadd" element={<CandidateAdd/>} /> */}
-              <Route path="candidatelist" element={<CandidateList />}
-                />
-                
+      {/* User profile provider */}
+      <ProfileProvider>
+        <Routes>
+          {/* Home routes (Dashboard) */}
+          <Route path="/app" element={<DashboardLayout />}>
+            <Route path="/app" element={<Navigate to="/app/home" />} />
+            <Route path="home" element={<Home />} />
+
+            <Route path="date" element={<Date />} />
+            <Route path="voterslist" element={<VotersList />} />
+            <Route path="candidateadd" element={<CandidateAdd />} />
+            {/* <Route path="candidateadd" element={<CandidateAdd/>} /> */}
+            <Route path="candidatelist" element={<CandidateList />}/>
+            <Route path="votteradd" element={<VotterAdd/>}/>
 
 
-              
 
-              {/* route for personal view */}
-              {/* <Route path="personaldata">
+
+
+            {/* route for personal view */}
+            {/* <Route path="personaldata">
                 <Route
                   path="/app/date"
                   element={<Navigate to="/app/date/view" />}
@@ -58,42 +66,48 @@ function App() {
                 <Route path="addDetails" element={<AddPersonal />} />
               </Route> */}
 
-               {/* route for spots view */}
-               {/* <Route path="spots"> */}
-                
-                {/* <Route path="turflist" element={<TurfList />} /> */}
-                {/* <Route path="addDetails" element={<AddTurfDetails />} /> */}
-                {/* <Route path="view" element={<ViewTurf />} /> */}
-                {/* <Route path="view" element={<TimeList />} /> */}
-              </Route>
+            {/* route for spots view */}
+            {/* <Route path="spots"> */}
 
-              {/* route for time view */}
-              
-                <Route
-                  path="/app/candidatelist"
-                  element={<CandidateList />}
-                />
-                {/* <Route path="list" element={<TimeList />} />
+            {/* <Route path="turflist" element={<TurfList />} /> */}
+            {/* <Route path="addDetails" element={<AddTurfDetails />} /> */}
+            {/* <Route path="view" element={<ViewTurf />} /> */}
+            {/* <Route path="view" element={<TimeList />} /> */}
+          </Route>
+
+          {/* route for time view */}
+
+          <Route
+            path="/app/candidatelist"
+            element={<CandidateList />}
+          />
+          {/* <Route path="list" element={<TimeList />} />
                 <Route path="candidatelist" element={<CandidateList />} /> */}
-              
 
-            {/* </Route> */}
 
-            {/* user routes */}
-            <Route path="/user" element={<AuthLayout />}>
-              <Route path="landing" element={<UserNavbar />} />
-              <Route path="login" element={<Login />} />
-              <Route path="forgot" element={<ForgotPassword />} />
-              <Route path="recover" element={<RecoverPassword />} />
-            </Route>
-            <Route path="/post">
+          {/* </Route> */}
+
+          {/* user routes */}
+          <Route path="/user" element={<AuthLayout />}>
+            <Route path="landing" element={<UserNavbar />} />
+            <Route path="login" element={<Login />} />
+            <Route path="forgot" element={<ForgotPassword />} />
+            <Route path="recover" element={<RecoverPassword />} />
+          </Route>
+          <Route path="/post">
             <Route path="chairman" element={<ChairmanPost />} />
-              <Route path="editor" element={<EditorPost />} />
-              <Route path="uuc" element={<Uuc />} />
-              <Route path="as" element={<AssociationSecretrary />} />
-                </Route>
-          </Routes>
-        </ProfileProvider>
+            <Route path="editor" element={<EditorPost />} />
+            <Route path="uuc" element={<Uuc />} />
+            <Route path="as" element={<AssociationSecretrary />} />
+          </Route>
+          <Route path="/voter">
+            <Route path="chairman" element={<VoterChairmanPost />} />
+            <Route path="editor" element={<VoterEditorPost />} />
+            <Route path="uuc" element={<VoterUucPost />} />
+            <Route path="as" element={<VoterAssociationPost />} />
+          </Route>
+        </Routes>
+      </ProfileProvider>
     </ThemeConfig>
   );
 }

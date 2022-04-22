@@ -69,7 +69,6 @@ DataTable.propTypes = {
 
 export default function DataTable({ TABLE_HEAD, TABLE_DATA, SEARCH_ID }) {
   //radio button state
-  const [selectedValue, setSelectedValue] = useState();
 
   const [page, setPage] = useState(0);
   const [order, setOrder] = useState("asc");
@@ -79,9 +78,9 @@ export default function DataTable({ TABLE_HEAD, TABLE_DATA, SEARCH_ID }) {
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
   //radio button change
-  const handleRadioButtonChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
+  // const handleRadioButtonChange = (event) => {
+  //   setSelectedValue(event.target.value);
+  // };
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -144,6 +143,8 @@ export default function DataTable({ TABLE_HEAD, TABLE_DATA, SEARCH_ID }) {
             </Typography>
           </Stack>
         );
+      case "count":
+        return value[col.id];
       case "radio":
         return (
           <Stack
@@ -153,9 +154,9 @@ export default function DataTable({ TABLE_HEAD, TABLE_DATA, SEARCH_ID }) {
             spacing={2}
           >
             <Radio
-              checked={selectedValue === 'voted'}
-              onChange={handleRadioButtonChange}
-              value="voted"
+              checked={value.id === col.radioState?.id}
+              onChange={col.handleRadioChange(value)}
+              value={value.id}
               name="radio-buttons"
               inputProps={{ 'aria-label': 'A' }}
             />
@@ -175,6 +176,8 @@ export default function DataTable({ TABLE_HEAD, TABLE_DATA, SEARCH_ID }) {
             }
           />
         );
+
+
       default:
         return null;
     }

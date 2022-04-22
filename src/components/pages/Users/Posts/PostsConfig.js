@@ -6,25 +6,25 @@ const UserTypeConfig =[
         title:'Chairman',
         Icon:SupervisorAccountIcon,
         colorType:"primary",
-        name:"chonari"
+        to:"voter/chairman"
     },
     {
         title:'Editor',
         Icon:SupervisorAccountIcon,
         colorType:"error",
-        name:"mfc"
+        to:"voter/editor"
     },
     {
         title:'UUC',
         Icon:SupervisorAccountIcon,
         colorType:"info",
-        name:"manu"
+        to:"voter/uuc"
     },
     {
         title:'Association Secretery',
         Icon:SupervisorAccountIcon,
         colorType:"error",
-        name:"electric"
+        to:"voter/as"
     }
 
 ]

@@ -17,7 +17,7 @@ const TABLE_HEAD = [
     // baseUrl: "/app/student/view",
   },
   { id: "icon", label: "icon", alignRight: false, type: "text" },
-  { id: "vote", label: "Vote",alignRight: false, type: "radio" },
+  { id: "vote", label: "Vote",alignRight: false, type: "text" },
 ];
 
 const TABLE_DATA = [
@@ -25,21 +25,25 @@ const TABLE_DATA = [
     id: "134",
     item: "Pinarayi Vijayan",
     icon: "CPIM",
+    vote:"100"
   },
   {
     id: "34",
     item: "Umman Chandy",
     icon: "Congress",
+    vote:"3"
   },
   {
     id: "343433ojnn",
     item: "PK Kunjalikkutty",
     icon: "IUML",
+    vote:"5"
   },
   {
     id: "eonkn2434",
     item: "KT Jaleel",
     icon: "CPIM",
+    vote:"9"
   },
 ];
 

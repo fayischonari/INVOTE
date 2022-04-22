@@ -6,25 +6,25 @@ const UserTypeConfig =[
         title:'Chairman',
         Icon:SupervisorAccountIcon,
         colorType:"primary",
-        total:'250',
+        to:"post/chairman"
     },
     {
         title:'Editor',
         Icon:GroupIcon,
         colorType:"error",
-        total:'200',
+        to:"post/editor"
     },
     {
         title:'UUC',
         Icon:GroupIcon,
         colorType:"info",
-        total:'120',
+        to:"post/uuc"
     },
     {
-         title:"Association Secretery(CS)",
+         title:"Association Secretery(bba)",
         Icon:AccountBalanceIcon,
         colorType:"warning",
-        total:'12',
+        to:"post/as"
     }
 ]
 

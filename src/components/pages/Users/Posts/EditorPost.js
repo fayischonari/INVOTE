@@ -17,29 +17,34 @@ const TABLE_HEAD = [
     // baseUrl: "/app/student/view",
   },
   { id: "icon", label: "icon", alignRight: false, type: "text" },
-  { id: "vote", label: "Vote",alignRight: false, type: "radio" },
+  { id: "vote", label: "Vote",alignRight: false, type: "text" },
 ];
 
 const TABLE_DATA = [
   {
     id: "134",
-    item: "Pinarayi Vijayan",
+    item: "M Swaraj",
     icon: "CPIM",
+    vote:"234",
   },
   {
     id: "34",
-    item: "Umman Chandy",
+    item: "Shafi Parambil",
     icon: "Congress",
+    vote:"132",
+  
   },
   {
     id: "343433ojnn",
-    item: "PK Kunjalikkutty",
+    item: "PK Firos",
     icon: "IUML",
+    vote:"434",
   },
   {
     id: "eonkn2434",
-    item: "KT Jaleel",
+    item: "Zaman",
     icon: "CPIM",
+    vote:"544",
   },
 ];
 

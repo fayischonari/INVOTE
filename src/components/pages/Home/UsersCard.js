@@ -12,8 +12,8 @@ import { Link } from "react-router-dom";
 // ----------------------------------------------------------------------
 
 
-export default function UsersCard({type}) {
-  const {title,Icon,colorType,total} = type;
+export default function UsersCard({type,post}) {
+  const {title,Icon,colorType,total,to} = type;
   const RootStyle = styled(Card)(({ theme }) => ({
     boxShadow: "none",
     textAlign: "center",
@@ -38,7 +38,7 @@ export default function UsersCard({type}) {
   }));
   return (
     <RootStyle>
-      <Link to="/post/chairman" style={{ textDecoration: "none" }}>
+      <Link to={`/${post}`} style={{ textDecoration: "none" }}>
       <IconWrapperStyle>
         {/* <Icon icon={appleFilled} width={24} height={24} /> */}
         <Icon/>

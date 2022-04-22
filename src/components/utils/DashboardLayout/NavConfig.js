@@ -30,6 +30,11 @@ const NavConfig = [
     icon:ListAltIcon,
   },
   {
+    title:"Votter Add",
+    path:"/app/votteradd",
+    icon: PersonAddIcon,
+  },
+  {
     title: "voter's List",
     path: "/app/voterslist",
     icon: ListAltIcon,

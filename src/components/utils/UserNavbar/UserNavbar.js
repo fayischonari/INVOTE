@@ -38,7 +38,7 @@ export default function UserNavbar() {
         <Grid container spacing={3} rowSpacing={1} direction="row">
           {PostsConfig.map((type) => (
             <Grid item xs={12} sm={6} md={3}>
-              <UsersCard type={type} />
+              <UsersCard  post={type.to} type={type} />
             </Grid>
           ))}
         </Grid>

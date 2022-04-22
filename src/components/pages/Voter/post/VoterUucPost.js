@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState } from 'react'
 import { Container, Box, Typography, Grid,Button } from "@mui/material";
 import Page from '../../../utils/Page';
 import { Link as RouterLink } from "react-router-dom";
@@ -17,37 +17,51 @@ const TABLE_HEAD = [
     // baseUrl: "/app/student/view",
   },
   { id: "icon", label: "icon", alignRight: false, type: "text" },
-  { id: "vote", label: "Vote",alignRight: false, type: "text" },
+  { id: "vote", label: "Vote",alignRight: false, type: "radio" },
 ];
 
 const TABLE_DATA = [
   {
     id: "134",
-    item: "KK Shailaja",
+    item: "Dr.muzammil Isac",
     icon: "CPIM",
-    vote:"241"
   },
   {
     id: "34",
-    item: "K Sudhakaran",
+    item: "Ramesh Chennithala",
     icon: "Congress",
-    vote:"123"
   },
   {
     id: "343433ojnn",
-    item: "Kumaran",
+    item: "ET Muhammed Basheer",
     icon: "IUML",
-    vote:"234"
   },
   {
     id: "eonkn2434",
-    item: "Thanga",
+    item: "Sahfan",
     icon: "CPIM",
-    vote:"234"
   },
 ];
 
-export default function Uuc() {
+export default function VoterUucPost() {
+
+  const [vote, setVote] = useState(null);
+  const handleVote = (polledVote)=>(e) =>{
+    console.log(polledVote);
+    setVote(polledVote)};
+  const TABLE_HEAD = [
+    {
+      id: "item",
+      label: "Name",
+      alignRight: false,
+      type: "stack",
+
+      // baseUrl: "/app/student/view",
+    },
+    { id: "icon", label: "icon", alignRight: false, type: "text" },
+    { id: "vote", label: "Vote",alignRight: false, type: "radio",handleRadioChange:handleVote,
+    radioState:vote},
+  ]
   return (
     <Page title={"Home Page"} sx={{mt:6}}>
       <Container maxWidth="xl">

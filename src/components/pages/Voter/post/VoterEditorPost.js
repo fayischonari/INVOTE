@@ -23,22 +23,22 @@ const TABLE_HEAD = [
 const TABLE_DATA = [
   {
     id: "134",
-    item: "Dr.muzammil Isac",
+    item: "M Swaraj",
     icon: "CPIM",
   },
   {
     id: "34",
-    item: "Ramesh Chennithala",
+    item: "Shafi Parambil",
     icon: "Congress",
   },
   {
     id: "343433ojnn",
-    item: "ET Muhammed Basheer",
+    item: "PK Firos",
     icon: "IUML",
   },
   {
     id: "eonkn2434",
-    item: "Sahfan",
+    item: "Zaman",
     icon: "CPIM",
   },
 ];
@@ -59,8 +59,7 @@ export default function VoterEditorPost() {
       // baseUrl: "/app/student/view",
     },
     { id: "icon", label: "icon", alignRight: false, type: "text" },
-    { id: "vote", label: "Vote",alignRight: false, type: "radio",handleRadioChange:handleVote,
-    radioState:vote},
+    { id: "vote", label: "Vote",alignRight: false, type: "button",},
   ]
   
   return (
@@ -69,7 +68,7 @@ export default function VoterEditorPost() {
         <Grid container spacing={3} rowSpacing={1} direction="row">
      
         <Typography variant="h4" gutterBottom>
-            Candidate List
+            Editor:Candidate List
           </Typography>
     
         <DataTable TABLE_DATA={TABLE_DATA} TABLE_HEAD={TABLE_HEAD} />

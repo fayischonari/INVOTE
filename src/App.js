@@ -5,6 +5,7 @@ import ThemeConfig from "./theme";
 import GlobalStyles from "./theme/globalStyles";
 import Register from "./components/pages/Users/Register";
 import Login from "./components/pages/Users/Login";
+import UserLogin from "./components/pages/Users/UserLogin";
 import AuthLayout from "./components/utils/UserLayout/AuthLayout";
 import ForgotPassword from "./components/pages/Users/ForgotPassword";
 import RecoverPassword from "./components/pages/Users/RecoverPassword";
@@ -40,6 +41,15 @@ function App() {
       {/* User profile provider */}
       <ProfileProvider>
         <Routes>
+        
+          <Route>
+            <Route path="/app/login" element={<Login/>}/>
+
+
+          </Route>
+          <Route>
+            <Route path="/user/login" element={<UserLogin/>}/>
+          </Route>
           {/* Home routes (Dashboard) */}
           <Route path="/app" element={<DashboardLayout />}>
             <Route path="/app" element={<Navigate to="/app/home" />} />
@@ -51,6 +61,7 @@ function App() {
             {/* <Route path="candidateadd" element={<CandidateAdd/>} /> */}
             <Route path="candidatelist" element={<CandidateList />}/>
             <Route path="votteradd" element={<VotterAdd/>}/>
+
 
 
 

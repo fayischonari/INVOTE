@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState , useEffect } from 'react'
 import Page from "../../utils/Page";
 import {
     Stack,
@@ -7,10 +7,11 @@ import {
     Grid,
 } from "@mui/material";
 import DataTable from "../../utils/DataTable";
+import invoteService from '../../../services/invoteService';
 
 const TABLE_HEAD=[
     {
-        id:"candidateName",
+        id:"name",
         label:"Candidate Name",
         alignRight:false,
         type:"text",
@@ -28,45 +29,30 @@ const TABLE_HEAD=[
         type:"text",
     },
     {
-        id:"year",
-        label:"Year",
+        id:"semester",
+        label:"Semester",
         alignRight:false,
         type:"text",
     },
 
 ];
-const TABLE_DATA =[
-    {
-        id:"candidateName",
-        candidateName:"Aseel",
-        department:"microsoft",
-        post:"Pentester",
-        year:"fdsf",
-    },
-    {
-        id:"candidateName",
-        candidateName:"Aseel",
-        department:"microsoft",
-        post:"Pentester",
-        year:"fdsf",
-    },
-    {
-        id:"candidateName",
-        candidateName:"Aseel",
-        department:"microsoft",
-        post:"Pentester",
-        year:"fdsf",
-    },
-    {
-        id:"candidateName",
-        candidateName:"Aseel",
-        department:"microsoft",
-        post:"Pentester",
-        year:"fdsf",
-    },
-]
 
 export default function CandidateList() {
+    const [candidateList , setCandidateList]=useState();
+    // console.log(candidateList);
+    useEffect(() => {
+        const getCandidate = async () => {
+          try {
+            // get candidates
+            const candidate = await invoteService.getCandidate();
+            setCandidateList(candidate.data);
+            console.log(candidate.data);
+          } catch (err) {
+            console.error(err?.response?.data?.message);
+          }
+        };
+        getCandidate();
+      }, []);
     return (
         <Page title="candidate List">
             <Container>
@@ -80,7 +66,7 @@ export default function CandidateList() {
                         Candidate List
                     </Typography>
                 </Stack>
-                    <DataTable TABLE_HEAD={TABLE_HEAD} TABLE_DATA={TABLE_DATA}/>
+                    {candidateList && <DataTable TABLE_HEAD={TABLE_HEAD} TABLE_DATA={candidateList}/>}
             </Container>
         </Page>
 

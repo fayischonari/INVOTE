@@ -14,17 +14,21 @@ import {
   Typography,
   TableContainer,
   TablePagination,
-  Radio
+  Radio,
+  Button
 } from "@mui/material";
 
 // props type library
 import PropTypes from "prop-types";
+
+import TouchAppIcon from '@mui/icons-material/TouchApp';
 
 // custom components
 import DataTableHead from "./DataTableHead";
 import DataTableToolbar from "./DataTableToolbar";
 import Scrollbar from "../Scrollbar";
 import SearchNotFound from "./SearchNotFound";
+import { ResetTvRounded } from "@mui/icons-material";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -145,6 +149,8 @@ export default function DataTable({ TABLE_HEAD, TABLE_DATA, SEARCH_ID }) {
         );
       case "count":
         return value[col.id];
+        case "button":
+          return <TouchAppIcon/>;
       case "radio":
         return (
           <Stack

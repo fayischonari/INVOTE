@@ -33,7 +33,7 @@ const TABLE_HEAD = [
 const TABLE_DATA = [
     {
         id: "134",
-        item: "Dr.muzammil Isac",
+        item: "Dr.Thomas Isac",
         icon: "CPIM",
     },
     {
@@ -69,8 +69,7 @@ export default function VoterAssociationPost() {
       // baseUrl: "/app/student/view",
     },
     { id: "icon", label: "icon", alignRight: false, type: "text" },
-    { id: "vote", label: "Vote",alignRight: false, type: "radio",handleRadioChange:handleVote,
-    radioState:vote},
+    { id: "vote", label: "Vote",alignRight: false, type: "button",},
   ]
     return (
         <Page title={"Home Page"} sx={{ mt: 6 }}>
@@ -78,7 +77,7 @@ export default function VoterAssociationPost() {
                 <Grid container spacing={3} rowSpacing={1} direction="row">
 
                     <Typography variant="h4" gutterBottom>
-                        Candidate List
+                        AS:Candidate List
                     </Typography>
 
                     <DataTable TABLE_DATA={TABLE_DATA} TABLE_HEAD={TABLE_HEAD} />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useEffect , useState} from 'react'
 import Page from "../../utils/Page";
 import {
     Stack,
@@ -8,11 +8,12 @@ import {
 } from "@mui/material";
 
 import DataTable from "../../utils/DataTable";
+import invoteService from '../../../services/invoteService';
 
 const TABLE_HEAD=[
     {
-        id:"candidateName",
-        label:"Candidate Name",
+        id:"name",
+        label:"Voter Name",
         alignRight:false,
         type:"text",
     },
@@ -23,13 +24,7 @@ const TABLE_HEAD=[
         type:"text",
     },
     {
-        id:"post",
-        label:"Post",
-        alignRight:false,
-        type:"text",
-    },
-    {
-        id:"year",
+        id:"semester",
         label:"Year",
         alignRight:false,
         type:"text",
@@ -37,40 +32,22 @@ const TABLE_HEAD=[
 
 ];
 
-const TABLE_DATA =[
-    {
-        id:"candidateName",
-        candidateName:"Aseel",
-        department:"microsoft",
-        post:"Pentester",
-        year:"fdsf",
-    },
-    {
-        id:"candidateName",
-        candidateName:"Aseel",
-        department:"microsoft",
-        post:"Pentester",
-        year:"fdsf",
-    },
-    {
-        id:"candidateName",
-        candidateName:"Aseel",
-        department:"microsoft",
-        post:"Pentester",
-        year:"fdsf",
-    },
-    {
-        id:"candidateName",
-        candidateName:"Aseel",
-        department:"microsoft",
-        post:"Pentester",
-        year:"fdsf",
-    },
-]
-
-
-
 export default function VotersList() {
+    const [votersList , setVotersList]=useState();
+    // console.log(candidateList);
+    useEffect(() => {
+        const getVoter = async () => {
+          try {
+            // get candidates
+            const voter = await invoteService.getAllVoters();
+            setVotersList(voter.data);
+            console.log(voter.data);
+          } catch (err) {
+            console.error(err?.response?.data?.message);
+          }
+        };
+        getVoter();
+      }, []);
     return (
         <Page title="candidatelist">
             <Container>
@@ -87,7 +64,7 @@ export default function VotersList() {
                         <h1>welcome</h1>
                     </Grid>
                 </Stack>
-                <DataTable TABLE_HEAD={TABLE_HEAD} TABLE_DATA={TABLE_DATA}/>
+                {votersList && <DataTable TABLE_HEAD={TABLE_HEAD} TABLE_DATA={votersList}/>}
 
             </Container>
         </Page>

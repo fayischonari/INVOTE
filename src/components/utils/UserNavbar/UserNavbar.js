@@ -33,7 +33,7 @@ export default function UserNavbar() {
         </Nav> */}
         <Container maxWidth="xl">
         <Box sx={{ pb: 5 }}>
-          <Typography variant="h4">Dashboard</Typography>
+          <Typography variant="h4">Cast your vote</Typography>
         </Box>
         <Grid container spacing={3} rowSpacing={1} direction="row">
           {PostsConfig.map((type) => (

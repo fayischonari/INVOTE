@@ -16,11 +16,11 @@ const ContentStyle = styled("div")(({ theme }) => ({
   padding: theme.spacing(12, 0),
 }));
 
-export default function Login() {
-  const [email, setEmail] = useState();
+export default function UserLogin() {
+  const [username, setUserName] = useState();
   const [password, setPassword] = useState();
 
-  const handleClick = () => console.log(email, password);
+  const handleClick = () => console.log(username, password);
 
   return (
     <Container>
@@ -33,10 +33,10 @@ export default function Login() {
           </Box>
           <Stack spacing={2}>
             <TextInput
-              label="Email"
-              type="email"
-              value={email}
-              setValue={setEmail}
+              label="UserName"
+              type="username"
+              value={username}
+              setValue={setUserName}
             />
             <PasswordField
               label="Password"
@@ -67,10 +67,11 @@ export default function Login() {
               </Link>
             </Stack>
             <SubmitButton
-              disabled={!email || !password ? true : false}
+              disabled={!username || !password ? true : false}
               name="Login"
-              to="/app/home"
               onClick={handleClick}
+              to="/user/landing"
+
             />
           </Stack>
         </Card>

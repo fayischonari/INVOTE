@@ -23,22 +23,22 @@ const TABLE_HEAD = [
 const TABLE_DATA = [
   {
     id: "134",
-    item: "Dr.muzammil Isac",
+    item: "KK Shailaja",
     icon: "CPIM",
   },
   {
     id: "34",
-    item: "Ramesh Chennithala",
+    item: "K sudhakaran",
     icon: "Congress",
   },
   {
     id: "343433ojnn",
-    item: "ET Muhammed Basheer",
+    item: "Kumaran",
     icon: "IUML",
   },
   {
     id: "eonkn2434",
-    item: "Sahfan",
+    item: "Thanka",
     icon: "CPIM",
   },
 ];
@@ -59,8 +59,7 @@ export default function VoterUucPost() {
       // baseUrl: "/app/student/view",
     },
     { id: "icon", label: "icon", alignRight: false, type: "text" },
-    { id: "vote", label: "Vote",alignRight: false, type: "radio",handleRadioChange:handleVote,
-    radioState:vote},
+    { id: "vote", label: "Vote",alignRight: false, type: "button",},
   ]
   return (
     <Page title={"Home Page"} sx={{mt:6}}>
@@ -68,7 +67,7 @@ export default function VoterUucPost() {
         <Grid container spacing={3} rowSpacing={1} direction="row">
      
         <Typography variant="h4" gutterBottom>
-            Candidate List
+           UUC: Candidate List
           </Typography>
     
         <DataTable TABLE_DATA={TABLE_DATA} TABLE_HEAD={TABLE_HEAD} />
